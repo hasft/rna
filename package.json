@@ -1,0 +1,31 @@
+{
+  "name": "rna",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "clean": "bsb -clean-world",
+    "dev": "concurrently \"bsb -clean-world -make-world -w\" \"next dev\"",
+    "dev:reason": "bsb -make-world -w",
+    "dev:next": "next dev",
+    "build": "yarn clean && yarn build:reason && yarn build:next",
+    "build:reason": "bsb -make-world",
+    "build:next": "next build",
+    "start": "DISABLE_SERVERLESS=true NODE_ENV=production next start"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.34",
+    "next": "^9.3.5",
+    "next-transpile-modules": "^3.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "reason-react": "^0.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "bs-css": "^12.2.0",
+    "bs-platform": "^7.2.2",
+    "concurrently": "^5.1.0",
+    "typescript": "^3.8.3"
+  }
+}
