@@ -14,7 +14,7 @@
       "subdirs": true
     }
   ],
-  "bs-dependencies": ["reason-react", "bs-css"],
+  "bs-dependencies": ["reason-react"],
   "reason": { "react-jsx": 3 },
   "package-specs": {
     "module": "es6",
@@ -22,5 +22,6 @@
   },
   "suffix": ".bs.js",
   "bsc-flags": ["-bs-super-errors"],
+  "ppx-flags": [],
   "refmt": 3
 }
