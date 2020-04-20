@@ -3,6 +3,7 @@
 import * as Css from "bs-css-emotion/src/Css.js";
 import * as Curry from "bs-platform/lib/es6/curry.js";
 import * as React from "react";
+import * as ReactUseragent from "@quentin-sommer/react-useragent";
 
 var home = Curry._1(Css.style, /* :: */[
       Css.display(Css.flexBox),
@@ -14,9 +15,19 @@ var Styles = {
 };
 
 function Index(Props) {
-  return React.createElement("div", {
-              className: home
-            }, "Home");
+  return React.createElement(ReactUseragent.UserAgent, {
+              mobile: true,
+              tablet: true,
+              children: (function (uaIsMobile, uaIsTablet) {
+                  if (uaIsMobile || uaIsTablet) {
+                    return React.createElement("p", undefined, "This will ONLY be rendered on mobile/tablet");
+                  } else {
+                    return React.createElement("p", {
+                                className: home
+                              }, "This will NOT be rendered on mobile/tablet");
+                  }
+                })
+            });
 }
 
 var make = Index;

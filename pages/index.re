@@ -6,5 +6,17 @@ module Styles = {
 
 [@react.component]
 let make = () =>
-  <div className=Styles.home> {ReasonReact.string("Home")} </div>;
+  <UserAgent mobile=true tablet=true>
+    {(uaIsMobile, uaIsTablet) =>
+       uaIsMobile || uaIsTablet
+         ? <p>
+             {ReasonReact.string(
+                "This will ONLY be rendered on mobile/tablet",
+              )}
+           </p>
+         : <p className=Styles.home>
+             {ReasonReact.string("This will NOT be rendered on mobile/tablet")}
+           </p>}
+  </UserAgent>;
+
 let default = make;
