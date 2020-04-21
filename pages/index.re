@@ -5,18 +5,8 @@ module Styles = {
 };
 
 [@react.component]
-let make = () =>
-  <UserAgent mobile=true tablet=true>
-    {(uaIsMobile, uaIsTablet) =>
-       uaIsMobile || uaIsTablet
-         ? <p>
-             {ReasonReact.string(
-                "This will ONLY be rendered on mobile/tablet",
-              )}
-           </p>
-         : <p className=Styles.home>
-             {ReasonReact.string("This will NOT be rendered on mobile/tablet")}
-           </p>}
-  </UserAgent>;
+let make = () => {
+  <ConsumerPage> <div> {ReasonReact.string("Home")} </div> </ConsumerPage>;
+};
 
 let default = make;
