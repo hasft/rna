@@ -3733,6 +3733,11 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
+next-rum@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/next-rum/-/next-rum-1.1.0.tgz#9dae185eafb18ef8cf111178634f91134efed16c"
+  integrity sha512-6lg2lgh71btDyBxqtsnu5Me6mwaE7ajSCsaIDESHBTuzPj/f+knHeqE3HDb79a23C7pD75qg2zq9z33Zk8lpHw==
+
 next-tick@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"

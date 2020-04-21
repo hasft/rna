@@ -1,6 +1,23 @@
 import * as React from "react";
 import App from "next/app";
+import RUM from "next-rum";
 import {UserAgentProvider} from "@quentin-sommer/react-useragent";
+
+function navigated(url, rum) {
+    console.log("the page has navigated to", url, rum);
+
+    /*
+    // GA example
+    for (let metricName in rum) {
+        ga('send', 'event', {
+          eventCategory: 'Performance Metrics',
+          eventValue: rum[metricName],
+          eventAction: metricName,
+          nonInteraction: true,
+        });
+      }
+    */
+}
 
 export default class Rna extends App {
     static async getInitialProps({ctx, Component}) {
@@ -21,6 +38,6 @@ export default class Rna extends App {
         // @ts-ignore
         const {Component, pageProps, ua} = this.props;
 
-        return <UserAgentProvider ua={ua}><Component {...pageProps} /></UserAgentProvider>
+        return <RUM navigated={navigated}> <UserAgentProvider ua={ua}><Component {...pageProps} /></UserAgentProvider></RUM>
     }
 }
