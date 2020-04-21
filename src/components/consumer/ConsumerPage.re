@@ -1,7 +1,8 @@
-module Content = {
+module Wrapper = {
   [@react.component]
   let make = (~children) => {
     let theme = React.useContext(ThemeProvider.themeContext);
+
     <div className=theme> children </div>;
   };
 
@@ -10,6 +11,6 @@ module Content = {
 
 [@react.component]
 let make = (~children) =>
-  <ThemeProvider value="light"> <Content> children </Content> </ThemeProvider>;
+  <ThemeProvider value="light"> <Wrapper> children </Wrapper> </ThemeProvider>;
 
 let default = make;
