@@ -6,7 +6,7 @@ module Styles = {
 
 [@react.component]
 let make = () => {
-  <ConsumerPage> <div> {ReasonReact.string("Home")} </div> </ConsumerPage>;
+  <div> {ReasonReact.string("Home")} </div>;
 };
 
 let default = make;

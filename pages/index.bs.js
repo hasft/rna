@@ -3,7 +3,6 @@
 import * as Css from "bs-css-emotion/src/Css.js";
 import * as Curry from "bs-platform/lib/es6/curry.js";
 import * as React from "react";
-import * as ConsumerPage from "../src/components/consumer/ConsumerPage.bs.js";
 
 var home = Curry._1(Css.style, /* :: */[
       Css.display(Css.flexBox),
@@ -15,9 +14,7 @@ var Styles = {
 };
 
 function Index(Props) {
-  return React.createElement(ConsumerPage.make, {
-              children: React.createElement("div", undefined, "Home")
-            });
+  return React.createElement("div", undefined, "Home");
 }
 
 var make = Index;
