@@ -4,9 +4,18 @@ module Styles = {
   let home = style([display(flexBox)]);
 };
 
+module Home = {
+  [@react.component]
+  let make = () => {
+    let theme = React.useContext(ThemeProvider.themeContext);
+    <div> {ReasonReact.string("home" ++ theme)} </div>;
+  };
+  let default = make;
+};
+
 [@react.component]
 let make = () => {
-  <div> {ReasonReact.string("Home")} </div>;
+  <ConsumerPage> <Home /> </ConsumerPage>;
 };
 
 let default = make;

@@ -1,3 +1,4 @@
 [@react.component]
-let make = (~children) => children;
+let make = (~children) =>
+  <UiProviders> <MdsProviders> children </MdsProviders> </UiProviders>;
 let default = make;
