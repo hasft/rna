@@ -14,7 +14,7 @@
       "subdirs": true
     }
   ],
-  "bs-dependencies": ["reason-react", "bs-css", "bs-css-emotion"],
+  "bs-dependencies": ["reason-react", "bs-css", "bs-css-emotion", "re-classnames"],
   "reason": { "react-jsx": 3 },
   "package-specs": {
     "module": "es6",
