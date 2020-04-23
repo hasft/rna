@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="Bucklescript" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/node_modules/bs-css" />
+        <item url="file://$PROJECT_DIR$/node_modules/bs-css-emotion" />
+        <item url="file://$PROJECT_DIR$/node_modules/re-classnames" />
+        <item url="file://$PROJECT_DIR$/node_modules/reason-react" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/node_modules/bs-css" />
+      <root url="file://$PROJECT_DIR$/node_modules/bs-css-emotion" />
+      <root url="file://$PROJECT_DIR$/node_modules/re-classnames" />
+      <root url="file://$PROJECT_DIR$/node_modules/reason-react" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

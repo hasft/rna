@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "clean": "bsb -clean-world",
     "dev": "concurrently \"bsb -clean-world -make-world -w\" \"next dev\"",
     "dev:reason": "bsb -clean-world -make-world -w",
     "dev:next": "next dev",
@@ -12,8 +13,11 @@
   },
   "dependencies": {
     "@quentin-sommer/react-useragent": "^3.1.0",
+    "bs-guid": "^1.0.1",
     "next": "latest",
     "next-rum": "^1.1.0",
+    "normalize.css": "^8.0.1",
+    "re-classnames": "^4.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "reason-react": "^0.7.0"
