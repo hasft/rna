@@ -26,7 +26,6 @@
     "@babel/core": "^7.4.3",
     "@types/node": "^13.13.0",
     "@types/react": "^16.9.34",
-    "bs-css-emotion": "^1.2.0",
     "bs-platform": "7.2.2",
     "concurrently": "^4.1.0",
     "next-transpile-modules": "^3.0.2",
