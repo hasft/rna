@@ -2,12 +2,34 @@
 
 import * as React from "react";
 import * as ConsumerPage from "../src/components/consumer/ConsumerPage.bs.js";
+import * as ReactNative from "react-native";
 import * as ThemeProvider from "../src/contexts/ThemeContext/ThemeProvider.bs.js";
 
 function Index(Props) {
   var theme = React.useContext(ThemeProvider.themeContext);
+  var styles = ReactNative.StyleSheet.create({
+        wrapper: {
+          backgroundColor: "#6698FF",
+          flexDirection: "column",
+          marginHorizontal: 0,
+          marginVertical: 0,
+          paddingVertical: 64
+        },
+        text: {
+          color: "#fff",
+          fontSize: 17,
+          fontWeight: "500",
+          marginLeft: 15
+        }
+      });
   return React.createElement(ConsumerPage.make, {
-              children: "home" + theme
+              children: React.createElement(ReactNative.View, {
+                    style: styles.wrapper,
+                    children: React.createElement(ReactNative.Text, {
+                          style: styles.text,
+                          children: theme
+                        })
+                  })
             });
 }
 

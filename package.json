@@ -28,6 +28,7 @@
     "@babel/core": "^7.4.3",
     "@types/node": "^13.13.0",
     "@types/react": "^16.9.34",
+    "babel-plugin-react-native-web": "^0.12.2",
     "bs-platform": "7.2.2",
     "concurrently": "^4.1.0",
     "next-transpile-modules": "^3.0.2",
