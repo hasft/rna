@@ -1603,6 +1603,13 @@ bs-css@12.2.0:
   resolved "https://registry.yarnpkg.com/bs-css/-/bs-css-12.2.0.tgz#926e758d7f95c02f516505ecdcd855e1d9dcb2a0"
   integrity sha512-JDaJAc8XKYZA05G8xVuDhB184yGKgNajdUloPC+OK+J8gGTnv8pfrhWKsFFKry87eJN4kKHhgsbXaN5U70g+3Q==
 
+bs-guid@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/bs-guid/-/bs-guid-1.0.1.tgz#d605a2fa054f7216b3265d20fbaf2af9fbee3d7d"
+  integrity sha512-vCMybqa8o4Gba86rItT2Uppvb3w9tFp+G9E5VfXCP/HVaeyit8dadvpLF6duZpH8TEnHvyD8nTovMU8ZypA2lQ==
+  dependencies:
+    uuid "^3.3.2"
+
 bs-platform@7.2.2:
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-7.2.2.tgz#76fdc63e4889458ae3d257a0132107a792f2309c"
@@ -5735,6 +5742,11 @@ util@^0.11.0:
   integrity sha512-HShAsny+zS2TZfaXxD9tYj4HQGlBezXZMZuM/S5PKLLoZkShZiGk9o5CzukI1LVHZvjdvZ2Sj1aW/Ndn2NB/HQ==
   dependencies:
     inherits "2.0.3"
+
+uuid@^3.3.2:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
+  integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
 validate-npm-package-license@^3.0.1:
   version "3.0.4"
