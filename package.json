@@ -20,7 +20,9 @@
     "re-classnames": "^4.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "reason-react": "^0.7.0"
+    "react-native-web": "^0.12.2",
+    "reason-react": "^0.7.0",
+    "reason-react-native": "^0.61.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

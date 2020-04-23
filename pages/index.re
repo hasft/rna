@@ -1,7 +1,9 @@
 [@react.component]
 let make = () => {
   let theme = React.useContext(ThemeProvider.themeContext);
-  <ConsumerPage> {ReasonReact.string("home" ++ theme)} </ConsumerPage>;
+  <ConsumerPage>
+    <View> {ReasonReact.string("home" ++ theme)} </View>
+  </ConsumerPage>;
 };
 
 let default = make;
