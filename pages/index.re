@@ -10,7 +10,9 @@ let make = () => {
   let theme = React.useContext(ThemeProvider.themeContext);
   <ConsumerPage>
     <View className=Styles.viewHome>
-      {ReasonReact.string("home" ++ theme)}
+      <Text selectable=false numberOfLine="a">
+        {ReasonReact.string("home" ++ theme)}
+      </Text>
     </View>
   </ConsumerPage>;
 };
