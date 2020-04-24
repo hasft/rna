@@ -1,7 +1,13 @@
+module Styles = {
+  open Css;
+  let home = style([display(flexBox)]);
+};
+
 [@react.component]
 let make = () => {
-  let theme = React.useContext(ThemeProvider.themeContext);
-  <ConsumerPage> {ReasonReact.string("home" ++ theme)} </ConsumerPage>;
+  <ConsumerPage>
+    <div className=Styles.home> {ReasonReact.string("home")} </div>
+  </ConsumerPage>;
 };
 
 let default = make;
