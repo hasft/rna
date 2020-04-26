@@ -1,0 +1,11 @@
+.text {
+    color: red;
+}
+
+.text-nl-one {
+    -webkit-line-clamp: 1
+}
+
+.text-nl-two {
+    -webkit-line-clamp: 2
+}

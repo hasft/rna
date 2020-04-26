@@ -1,3 +1,5 @@
+let str = React.string;
+
 module Styles = {
   open Css;
   let home = style([display(flexBox)]);
@@ -5,9 +7,7 @@ module Styles = {
 
 [@react.component]
 let make = () => {
-  <ConsumerPage>
-    <div className=Styles.home> {ReasonReact.string("home")} </div>
-  </ConsumerPage>;
+  <ConsumerPage> <Text> {"Home" |> str} </Text> </ConsumerPage>;
 };
 
 let default = make;
