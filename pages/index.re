@@ -1,13 +1,13 @@
-let str = React.string;
-
-module Styles = {
-  open Css;
-  let home = style([display(flexBox)]);
+module Home = {
+  [@react.component]
+  let make = () => {
+    <> <Text domNode=P> "haska"->React.string </Text> <ModeButton /> </>;
+  };
 };
 
 [@react.component]
 let make = () => {
-  <ConsumerPage> <Text> {"Home" |> str} </Text> </ConsumerPage>;
+  <ConsumerPage> <Home /> </ConsumerPage>;
 };
 
 let default = make;

@@ -1,11 +1,15 @@
+let str = ReasonReact.string;
+
 module HeaderMobile = {
   [@react.component]
-  let make = () => <div> {ReasonReact.string("header mobile")} </div>;
+  let make = () => <Text> {"header mobile" |> str} </Text>;
 };
 
 module HeaderDesktop = {
   [@react.component]
-  let make = () => <div> {ReasonReact.string("header desktop")} </div>;
+  let make = () => {
+    "header" |> str;
+  };
 };
 
 [@react.component]
@@ -15,4 +19,3 @@ let make = () => {
        uaIsTablet || uaIsMobile ? <HeaderMobile /> : <HeaderDesktop />}
   </UserAgent>;
 };
-let default = make;
