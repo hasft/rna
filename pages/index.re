@@ -1,7 +1,7 @@
 module Home = {
   [@react.component]
   let make = () => {
-    <> <Text domNode=P> "haska"->React.string </Text> <ModeButton /> </>;
+    <> <Text domNode=H1> "haska"->React.string </Text> <ModeButton /> </>;
   };
 };
 

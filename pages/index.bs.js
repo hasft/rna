@@ -7,7 +7,7 @@ import * as ConsumerPage from "../src/components/consumer/ConsumerPage.bs.js";
 
 function Index$Home(Props) {
   return React.createElement(React.Fragment, undefined, React.createElement($$Text.make, {
-                  domNode: /* P */1,
+                  domNode: /* H1 */4,
                   children: "haska"
                 }), React.createElement(ModeButton.make, { }));
 }
