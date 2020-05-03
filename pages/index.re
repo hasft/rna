@@ -1,13 +1,22 @@
-let str = React.string;
+let str = ReasonReact.string;
 
-module Styles = {
-  open Css;
-  let home = style([display(flexBox)]);
+module Home = {
+  [@react.component]
+  let make = () => {
+    let (theme, action) = React.useContext(ThemeContext.themeContext);
+
+    <button onClick={_ => action(theme)}>
+      {switch (theme) {
+       | Light => "light" |> str
+       | Dark => "dark" |> str
+       }}
+    </button>;
+  };
 };
 
 [@react.component]
 let make = () => {
-  <ConsumerPage> <Text> {"Home" |> str} </Text> </ConsumerPage>;
+  <ConsumerPage> <Home /> </ConsumerPage>;
 };
 
 let default = make;

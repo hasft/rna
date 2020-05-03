@@ -1,10 +1,11 @@
+open Belt;
+
 module Styles = {
   open Css;
   let text = style([]);
-  let textWithNumberOfLines = (lineClamp: int) =>
-    style([unsafe("-webkit-line-clamp", string_of_int(lineClamp))]);
   let textWithSelectable = (isSelectable: bool) =>
     style([pointerEvents(isSelectable ? `auto : `none)]);
+  let textWithColor = colorName => style([color(colorName)]);
 };
 
 [@react.component]
@@ -12,8 +13,7 @@ let make =
     (
       ~domNode: option(PrimitivesDom.domText)=?,
       ~onPress=?,
-      ~numberOfLines: option(int)=?,
-      ~selectable=true,
+      ~selectable: option(bool)=?,
       ~style=?,
       ~className: option(string)=?,
       ~id: option(string)=?,
@@ -22,11 +22,8 @@ let make =
   let className =
     Cn.make([
       Styles.text,
-      Styles.textWithNumberOfLines(
-        Belt.Option.getWithDefault(numberOfLines, 1),
-      )
-      ->Cn.ifSome(numberOfLines),
-      Styles.textWithSelectable(selectable),
+      Styles.textWithSelectable(Option.getWithDefault(selectable, true))
+      ->Cn.ifSome(selectable),
       className->Cn.unpack,
     ]);
 

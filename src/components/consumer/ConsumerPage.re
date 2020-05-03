@@ -1,4 +1,3 @@
 [@react.component]
 let make = (~children) =>
-  <PageProviders> <Header /> children </PageProviders>;
-let default = make;
+  <PageProviders> <Header /> children <Footer /> </PageProviders>;
