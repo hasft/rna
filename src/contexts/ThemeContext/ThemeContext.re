@@ -1,8 +1,4 @@
-type mode =
-  | Light
-  | Dark;
+open ThemeTypes;
 
-type dispatch = mode => unit;
-type contextValue = (mode, dispatch);
 let initValue: contextValue = (Light, _ => ignore());
 let themeContext = React.createContext(initValue);

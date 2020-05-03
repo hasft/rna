@@ -1,3 +1,5 @@
 [@react.component]
 let make = (~children) =>
-  <PageProviders> <Header /> children <Footer /> </PageProviders>;
+  <UiWrapper>
+    <MdsWrapper> <Header /> children <Footer /> </MdsWrapper>
+  </UiWrapper>;

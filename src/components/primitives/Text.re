@@ -1,10 +1,15 @@
-open Belt;
+open ThemeContext;
 
 module Styles = {
   open Css;
-  let text = style([]);
+  open ThemeTypes;
+
+  let text = (theme: system) =>
+    style([color(theme.colors.text_01), fontSize(theme.sizes.m)]);
+
   let textWithSelectable = (isSelectable: bool) =>
     style([pointerEvents(isSelectable ? `auto : `none)]);
+
   let textWithColor = colorName => style([color(colorName)]);
 };
 
@@ -19,10 +24,13 @@ let make =
       ~id: option(string)=?,
       ~children,
     ) => {
+  let (mode, _) = React.useContext(themeContext);
+  let theme = Theme.getThemeByMode(mode);
+
   let className =
     Cn.make([
-      Styles.text,
-      Styles.textWithSelectable(Option.getWithDefault(selectable, true))
+      Styles.text(theme),
+      Styles.textWithSelectable(Belt.Option.getWithDefault(selectable, true))
       ->Cn.ifSome(selectable),
       className->Cn.unpack,
     ]);

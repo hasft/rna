@@ -8,7 +8,7 @@ module HeaderMobile = {
 module HeaderDesktop = {
   [@react.component]
   let make = () => {
-    <Text> {"header" |> str} </Text>;
+    "header" |> str;
   };
 };
 
