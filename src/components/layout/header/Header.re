@@ -2,13 +2,15 @@ let str = ReasonReact.string;
 
 module HeaderMobile = {
   [@react.component]
-  let make = () => <Text> {"header mobile" |> str} </Text>;
+  let make = () => {
+    <View id="somebre"> <Logo /> </View>;
+  };
 };
 
 module HeaderDesktop = {
   [@react.component]
   let make = () => {
-    "header" |> str;
+    <View id="somebre"> <Logo /> </View>;
   };
 };
 
