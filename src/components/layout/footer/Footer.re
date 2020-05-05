@@ -1,4 +1,7 @@
 let str = ReasonReact.string;
 
 [@react.component]
-let make = () => <div> {"footer" |> str} </div>;
+let make = () =>
+  <View id="footer-desktop">
+    <Container> {"footer" |> str} </Container>
+  </View>;

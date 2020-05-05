@@ -39,7 +39,7 @@ export default class Rna extends App {
         // @ts-ignore
         const {Component, pageProps, ua} = this.props;
 
-        // TODO only for config/global context
+        // TODO only for foundation context
         return (
             <RUM navigated={navigated}>
                 <UserAgentProvider ua={ua}>

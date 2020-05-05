@@ -16,7 +16,7 @@ module Styles = {
 [@react.component]
 let make =
     (
-      ~domNode: option(PrimitivesDom.domText)=?,
+      ~domNode: option(DomNode.domNodeText)=?,
       ~onPress=?,
       ~selectable: option(bool)=?,
       ~style=?,
@@ -24,8 +24,7 @@ let make =
       ~id: option(string)=?,
       ~children,
     ) => {
-  let (mode, _) = React.useContext(themeContext);
-  let theme = Theme.getThemeByMode(mode);
+  let theme = useTheme();
 
   let className =
     Cn.make([
@@ -36,7 +35,7 @@ let make =
     ]);
 
   ReactDOMRe.createDOMElementVariadic(
-    PrimitivesDom.domNode(domNode),
+    DomNode.getDomNodeText(domNode),
     ~props=
       ReactDOMRe.domProps(~className, ~id?, ~style?, ~onClick=?onPress, ()),
     [|children|],

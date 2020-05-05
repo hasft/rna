@@ -1,4 +1,4 @@
-type domText =
+type domNodeText =
   | Span
   | P
   | Em
@@ -7,7 +7,21 @@ type domText =
   | H2
   | H3;
 
-let domNode = dn =>
+type domNodeTouchable =
+  | A
+  | Div;
+
+let getDomNodeTouchable = dn =>
+  switch (dn) {
+  | None => "div"
+  | Some(dt) =>
+    switch (dt) {
+    | A => "a"
+    | Div => "div"
+    }
+  };
+
+let getDomNodeText = dn =>
   switch (dn) {
   | None => "span"
   | Some(dt) =>
