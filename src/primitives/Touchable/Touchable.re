@@ -1,6 +1,6 @@
 module Styles = {
   open Css;
-  let touchable = style([cursor(pointer)]);
+  let touchable = style([cursor(pointer), display(flexBox)]);
 };
 
 [@react.component]

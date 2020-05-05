@@ -1,9 +1,9 @@
 [@react.component]
 let make = () => {
   let (theme, action) = React.useContext(ThemeContext.themeContext);
-  <button onClick={_ => action(theme)}>
+  <Button onPress={_ => action(theme)} title="toggle mode">
     "Toggle Theme"->React.string
-  </button>;
+  </Button>;
 };
 
 let default = make;

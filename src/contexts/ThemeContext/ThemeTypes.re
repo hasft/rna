@@ -10,6 +10,15 @@ type sizeScheme = {
   xs: size,
 };
 
+type spaceScheme = {
+  xxl: size,
+  xl: size,
+  l: size,
+  m: size,
+  s: size,
+  xs: size,
+};
+
 type colorScheme = {
   text_01: color,
   text_02: color,
@@ -20,12 +29,14 @@ type colorScheme = {
 };
 
 type system = {
-  colors: colorScheme,
   sizes: sizeScheme,
+  colors: colorScheme,
+  spaces: spaceScheme,
 };
 
 type mode =
   | Light
   | Dark;
+
 type dispatch = mode => unit;
 type contextValue = (mode, dispatch);

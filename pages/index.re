@@ -1,10 +1,12 @@
 module Home = {
   [@react.component]
   let make = () => {
-    <>
-      <Text domNode=H1 selectable=false> "haska"->React.string </Text>
-      <ModeButton />
-    </>;
+    <View id="home">
+      <Container>
+        <Text domNode=H1 selectable=false> "haska"->React.string </Text>
+        <ModeButton />
+      </Container>
+    </View>;
   };
 };
 
