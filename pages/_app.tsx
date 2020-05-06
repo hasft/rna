@@ -4,6 +4,7 @@ import RUM from "next-rum";
 import {UserAgentProvider} from "@quentin-sommer/react-useragent";
 import 'normalize.css';
 import '../src/styles/styles.css';
+import {withApollo} from "../src/shared/apollo";
 
 function navigated(url, rum) {
     console.log("the page has navigated to", url, rum);
@@ -21,7 +22,7 @@ function navigated(url, rum) {
     */
 }
 
-export default class Rna extends App {
+class Rna extends App {
     static async getInitialProps({ctx, Component}) {
         let pageProps = {};
 
@@ -50,3 +51,5 @@ export default class Rna extends App {
         )
     }
 }
+
+export default withApollo(Rna);
