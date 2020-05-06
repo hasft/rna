@@ -2,8 +2,10 @@ import * as React from "react";
 import App from "next/app";
 import RUM from "next-rum";
 import {UserAgentProvider} from "@quentin-sommer/react-useragent";
+import {ApolloProvider} from "@apollo/react-common";
 import 'normalize.css';
 import '../src/styles/styles.css';
+
 import {withApollo} from "../src/shared/apollo";
 
 function navigated(url, rum) {
@@ -39,13 +41,16 @@ class Rna extends App {
 
     render(): JSX.Element {
         // @ts-ignore
-        const {Component, pageProps, ua} = this.props;
+        const {Component, pageProps, ua, apolloClient} = this.props;
+
 
         // TODO only for foundation context
         return (
             <RUM navigated={navigated}>
                 <UserAgentProvider ua={ua}>
-                    <Component {...pageProps} />
+                    <ApolloProvider client={apolloClient}>
+                        <Component {...pageProps} />
+                    </ApolloProvider>
                 </UserAgentProvider>
             </RUM>
         )
