@@ -21,10 +21,12 @@
     "re-classnames": "^4.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "reason-apollo": "^0.20.0",
     "reason-react": "^0.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
+    "@baransu/graphql_ppx_re": "^0.7.1",
     "@types/node": "^13.13.0",
     "@types/react": "^16.9.34",
     "bs-platform": "7.2.2",
