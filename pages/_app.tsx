@@ -2,8 +2,11 @@ import * as React from "react";
 import App from "next/app";
 import RUM from "next-rum";
 import {UserAgentProvider} from "@quentin-sommer/react-useragent";
+import {ApolloProvider} from "@apollo/react-common";
 import 'normalize.css';
 import '../src/styles/styles.css';
+
+import {withApollo} from "../src/shared/apollo";
 
 function navigated(url, rum) {
     console.log("the page has navigated to", url, rum);
@@ -21,13 +24,18 @@ function navigated(url, rum) {
     */
 }
 
-export default class Rna extends App {
+class Rna extends App {
     static async getInitialProps({ctx, Component}) {
         let pageProps = {};
 
-        if (Component.getInitialProps) {
-            pageProps = await Component.getInitialProps(ctx)
+        try {
+            if (Component.getInitialProps) {
+                pageProps = await Component.getInitialProps(ctx);
+            }
+        } catch (e) {
+            throw e; // you can also skip re-throwing and set property on pageProps
         }
+
 
         const ua = ctx.req
             ? ctx.req.headers["user-agent"]
@@ -38,15 +46,18 @@ export default class Rna extends App {
 
     render(): JSX.Element {
         // @ts-ignore
-        const {Component, pageProps, ua} = this.props;
+        const {Component, pageProps, ua, apolloClient} = this.props;
 
-        // TODO only for foundation context
         return (
             <RUM navigated={navigated}>
-                <UserAgentProvider ua={ua}>
-                    <Component {...pageProps} />
+                <UserAgentProvider ua={ua || ""}>
+                    <ApolloProvider client={apolloClient}>
+                        <Component {...pageProps} />
+                    </ApolloProvider>
                 </UserAgentProvider>
             </RUM>
         )
     }
 }
+
+export default withApollo(Rna);

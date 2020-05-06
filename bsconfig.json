@@ -14,8 +14,7 @@
       "subdirs": true
     }
   ],
-  "bs-dependencies": ["reason-react", "re-classnames", "bs-guid", "bs-css", "bs-css-emotion", "reason-apollo",
-    "reason-apollo-hooks"
+  "bs-dependencies": ["reason-react", "re-classnames", "bs-guid", "bs-css", "bs-css-emotion", "reason-apollo-hooks", "reason-apollo"
   ],
   "reason": { "react-jsx": 3 },
   "package-specs": {
@@ -24,6 +23,6 @@
   },
   "suffix": ".bs.js",
   "bsc-flags": ["-bs-super-errors"],
-  "ppx-flags": [],
+  "ppx-flags": ["@baransu/graphql_ppx_re/ppx"],
   "refmt": 3
 }

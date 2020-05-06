@@ -3,11 +3,122 @@
 import * as $$Text from "../src/primitives/Text/Text.bs.js";
 import * as View from "../src/primitives/View/View.bs.js";
 import * as React from "react";
+import * as Js_exn from "bs-platform/lib/es6/js_exn.js";
+import * as Js_dict from "bs-platform/lib/es6/js_dict.js";
+import * as Js_json from "bs-platform/lib/es6/js_json.js";
 import * as Container from "../src/components/layout/container/Container.bs.js";
+import * as Js_option from "bs-platform/lib/es6/js_option.js";
 import * as ModeButton from "../src/components/modeButton/ModeButton.bs.js";
+import * as ApolloHooks from "reason-apollo-hooks/src/ApolloHooks.bs.js";
+import * as Caml_option from "bs-platform/lib/es6/caml_option.js";
 import * as ConsumerPage from "../src/components/consumer/ConsumerPage.bs.js";
 
+var ppx_printed_query = "query UserQuery  {\ncountry(input: {slug: \"united-states\"})  {\nname  \nid  \ntype  \n}\n\n}\n";
+
+function parse(value) {
+  var value$1 = Js_option.getExn(Js_json.decodeObject(value));
+  var match = Js_dict.get(value$1, "country");
+  var tmp;
+  if (match !== undefined) {
+    var value$2 = Js_option.getExn(Js_json.decodeObject(Caml_option.valFromOption(match)));
+    var match$1 = Js_dict.get(value$2, "name");
+    var tmp$1;
+    if (match$1 !== undefined) {
+      var value$3 = Caml_option.valFromOption(match$1);
+      var match$2 = Js_json.decodeString(value$3);
+      tmp$1 = match$2 !== undefined ? match$2 : Js_exn.raiseError("graphql_ppx: Expected string, got " + JSON.stringify(value$3));
+    } else {
+      tmp$1 = Js_exn.raiseError("graphql_ppx: Field name on type Country is missing");
+    }
+    var match$3 = Js_dict.get(value$2, "id");
+    var tmp$2;
+    if (match$3 !== undefined) {
+      var value$4 = Caml_option.valFromOption(match$3);
+      var match$4 = Js_json.decodeString(value$4);
+      tmp$2 = match$4 !== undefined ? match$4 : Js_exn.raiseError("graphql_ppx: Expected string, got " + JSON.stringify(value$4));
+    } else {
+      tmp$2 = Js_exn.raiseError("graphql_ppx: Field id on type Country is missing");
+    }
+    var match$5 = Js_dict.get(value$2, "type");
+    var tmp$3;
+    if (match$5 !== undefined) {
+      var value$5 = Caml_option.valFromOption(match$5);
+      var match$6 = Js_json.decodeString(value$5);
+      tmp$3 = match$6 !== undefined ? match$6 : Js_exn.raiseError("graphql_ppx: Expected string, got " + JSON.stringify(value$5));
+    } else {
+      tmp$3 = Js_exn.raiseError("graphql_ppx: Field type on type Country is missing");
+    }
+    tmp = {
+      name: tmp$1,
+      id: tmp$2,
+      type: tmp$3
+    };
+  } else {
+    tmp = Js_exn.raiseError("graphql_ppx: Field country on type Query is missing");
+  }
+  return {
+          country: tmp
+        };
+}
+
+function make(param) {
+  return {
+          query: ppx_printed_query,
+          variables: null,
+          parse: parse
+        };
+}
+
+function makeWithVariables(param) {
+  return {
+          query: ppx_printed_query,
+          variables: null,
+          parse: parse
+        };
+}
+
+function makeVariables(param) {
+  return null;
+}
+
+function definition_002(graphql_ppx_use_json_variables_fn) {
+  return 0;
+}
+
+var definition = /* tuple */[
+  parse,
+  ppx_printed_query,
+  definition_002
+];
+
+function ret_type(f) {
+  return { };
+}
+
+var MT_Ret = { };
+
+var UsersQuery = {
+  ppx_printed_query: ppx_printed_query,
+  query: ppx_printed_query,
+  parse: parse,
+  make: make,
+  makeWithVariables: makeWithVariables,
+  makeVariables: makeVariables,
+  definition: definition,
+  ret_type: ret_type,
+  MT_Ret: MT_Ret
+};
+
 function Index$Home(Props) {
+  var match = ApolloHooks.useQuery(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, definition);
+  var users = match[0];
+  console.log(users);
+  var tmp;
+  tmp = typeof users === "number" ? (
+      users === /* Loading */0 ? React.createElement("p", undefined, "Loading...") : React.createElement("p", undefined, "Get off my lawn!")
+    ) : (
+      users.tag ? React.createElement("p", undefined, "Get off my lawn!") : React.createElement("p", undefined, users[0].country.name)
+    );
   return React.createElement(Container.make, {
               children: React.createElement(View.make, {
                     justifyContent: /* SpaceBetween */0,
@@ -16,7 +127,7 @@ function Index$Home(Props) {
                         domNode: /* H1 */4,
                         selectable: false,
                         children: "haska"
-                      }), React.createElement(ModeButton.make, { }))
+                      }), React.createElement(ModeButton.make, { }), tmp)
             });
 }
 
@@ -30,13 +141,14 @@ function Index(Props) {
             });
 }
 
-var make = Index;
+var make$1 = Index;
 
 var $$default = Index;
 
 export {
+  UsersQuery ,
   Home ,
-  make ,
+  make$1 as make,
   $$default ,
   $$default as default,
   
