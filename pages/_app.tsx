@@ -3,6 +3,7 @@ import App from "next/app";
 import RUM from "next-rum";
 import {UserAgentProvider} from "@quentin-sommer/react-useragent";
 import 'normalize.css';
+import '../src/styles/styles.css';
 
 function navigated(url, rum) {
     console.log("the page has navigated to", url, rum);
