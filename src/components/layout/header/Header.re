@@ -10,9 +10,9 @@ module HeaderMobile = {
 module HeaderDesktop = {
   [@react.component]
   let make = () => {
-    <View id="header-desktop">
-      <Container> <Logo /> <Nav id="segment" /> </Container>
-    </View>;
+    <Container>
+      <View justifyContent=SpaceBetween> <Logo /> <Nav id="segment" /> </View>
+    </Container>;
   };
 };
 

@@ -8,9 +8,9 @@ import * as ModeButton from "../src/components/modeButton/ModeButton.bs.js";
 import * as ConsumerPage from "../src/components/consumer/ConsumerPage.bs.js";
 
 function Index$Home(Props) {
-  return React.createElement(View.make, {
-              id: "home",
-              children: React.createElement(Container.make, {
+  return React.createElement(Container.make, {
+              children: React.createElement(View.make, {
+                    justifyContent: /* SpaceBetween */0,
                     children: null
                   }, React.createElement($$Text.make, {
                         domNode: /* H1 */4,

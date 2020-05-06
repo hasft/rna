@@ -29,7 +29,7 @@ module ContainerDesktop = {
     let theme = useTheme();
     let className =
       Cn.make([StylesDesktop.container(theme), className->Cn.unpack]);
-    <View ?style ?id className justifyContent=SpaceBetween> children </View>;
+    <div ?style ?id className> children </div>;
   };
 };
 
@@ -39,7 +39,7 @@ module ContainerMobile = {
     let theme = useTheme();
     let className =
       Cn.make([StylesMobile.container(theme), className->Cn.unpack]);
-    <View ?style ?id className> children </View>;
+    <div ?style ?id className> children </div>;
   };
 };
 
