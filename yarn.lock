@@ -5010,10 +5010,15 @@ readdirp@~3.3.0:
   dependencies:
     picomatch "^2.0.7"
 
-reason-apollo@^0.20.0:
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/reason-apollo/-/reason-apollo-0.20.0.tgz#102e6047bfc37d9f30462799e7f813d17dd4758a"
-  integrity sha512-L0y1mCcViRX6yhdo9dUQAhuDazE1ZbMb3IPuBnlTvQffvecmtDfl0RQ+BCzoCJEP3u8nwb88z2JDoURnaFDSkQ==
+reason-apollo-hooks@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/reason-apollo-hooks/-/reason-apollo-hooks-6.0.1.tgz#392a32455b8756d3897a360160c87fc5be052235"
+  integrity sha512-GQvH7aVClLfsKsOYT+tkh/SlsRBtshBO5vrZDRUmmfR4vH53XEOtAqByrY6sJq07MSQ968DjzFcN4sSC/l1k4A==
+
+reason-apollo@0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/reason-apollo/-/reason-apollo-0.19.0.tgz#16940916cd5c912a74fb9da57f4de063b20b6e6f"
+  integrity sha512-VpKHvdzBiLtIg+T/AC100ZNztr7KklIXzlnSd4o/T2vGnwFgVgHIG6//c+Hz8nFjaVUXfk1tFlxnVfBhhKQC4g==
   dependencies:
     apollo-cache-inmemory "^1.6.0"
     apollo-client "^2.6.3"

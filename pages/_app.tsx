@@ -28,9 +28,14 @@ class Rna extends App {
     static async getInitialProps({ctx, Component}) {
         let pageProps = {};
 
-        if (Component.getInitialProps) {
-            pageProps = await Component.getInitialProps(ctx)
+        try {
+            if (Component.getInitialProps) {
+                pageProps = await Component.getInitialProps(ctx);
+            }
+        } catch (e) {
+            throw e; // you can also skip re-throwing and set property on pageProps
         }
+
 
         const ua = ctx.req
             ? ctx.req.headers["user-agent"]
@@ -43,11 +48,9 @@ class Rna extends App {
         // @ts-ignore
         const {Component, pageProps, ua, apolloClient} = this.props;
 
-
-        // TODO only for foundation context
         return (
             <RUM navigated={navigated}>
-                <UserAgentProvider ua={ua}>
+                <UserAgentProvider ua={ua || ""}>
                     <ApolloProvider client={apolloClient}>
                         <Component {...pageProps} />
                     </ApolloProvider>
